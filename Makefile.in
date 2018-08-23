@@ -34,7 +34,7 @@ PYTHON := @PYTHON@
 # Note that autoconf also reads the release file.
 release := $(shell cat release | tr -d '\n')
 
-PKG_NAME := one_true_makefile
+PKG_NAME := non_recursive_make
 
 # The $(modules) and $(testmodules) variables give all of the modules
 #   (i.e. separate source directories) that make up this project.
@@ -432,14 +432,14 @@ install: all
 	done
 
 
-runtests: tests
+runtest: test
 	@[ $(PYTHON) != ":" ] || (echo "Python version >= 3.2/2.7 was not" \
 		"found by the configure script." && false)
 	cd $(test_dir)/bin && \
 	$(PYTHON) -B -m unittest $(testmodules)
 
 
-tests: $(testmodules)
+test: $(testmodules)
 
 
 uninstall:
