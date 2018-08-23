@@ -1,42 +1,30 @@
-# http://www.gnu.org/software/automake
+# Compiled Object files
+*.slo
+*.lo
+*.o
 
-Makefile.in
-/ar-lib
-/mdate-sh
-/py-compile
-/test-driver
-/ylwrap
+# Compiled Dynamic libraries
+*.so
 
-# http://www.gnu.org/software/autoconf
+# Compiled Static libraries
+*.lai
+*.la
+*.a
 
-/autom4te.cache
-/autoscan.log
-/autoscan-*.log
-/aclocal.m4
-/compile
-/config.guess
-/config.h.in
-/config.sub
-/configure
-/configure.scan
-/depcomp
-/install-sh
-/missing
-/stamp-h1
-
-# https://www.gnu.org/software/libtool/
-
-/ltmain.sh
-
-# http://www.gnu.org/software/texinfo
-
-/texinfo.tex
-
-# http://www.gnu.org/software/m4/
-
-m4/libtool.m4
-m4/ltoptions.m4
-m4/ltsugar.m4
-m4/ltversion.m4
-m4/lt~obsolete.m4
+# Build artifacts
+Makefile
+config.status
 autom4te.cache
+*.d
+include/config.h
+
+# "Junk"
+*.log
+*~
+\#*
+
+# Directories with build targets in them.
+*-build
+*-stage
+*-test
+
