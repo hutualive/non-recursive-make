@@ -345,3 +345,7 @@ does not save you from ever having to debug Makefiles again.  It just
 saves you from having to write a lot of boilerplate every time you
 start a new project.
 
+Reference
+===============
+
+https://github.com/ngbgithub/The-One-True-Makefile
