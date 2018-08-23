@@ -4,7 +4,7 @@
 
 // I modified this line.  -NB
 // #include "tinyxml2.h"
-#include "one_true_makefile/tinyxml2/tinyxml2.h"
+#include "non_recursive_make/tinyxml2/tinyxml2.h"
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
