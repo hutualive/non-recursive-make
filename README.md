@@ -52,8 +52,8 @@ Quick Start Guide
     `configure.ac`.
 
     put `config.h` in subdirectory called `include`:
-    <pre><code>AC_CONFIG_SRCDIR([include/config.h.in])
-    AC_CONFIG_HEADERS([include/config.h])</code></pre>
+    AC_CONFIG_SRCDIR([include/config.h.in])
+    AC_CONFIG_HEADERS([include/config.h])
 
 * Run `autoheader`
 
