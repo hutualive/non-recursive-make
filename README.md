@@ -122,8 +122,8 @@ You can verify everything is working by running:
 Note that the `hello` program successfully finds the `libfoo.so`
 shared library, thanks to Libtool.
 
-You can build the unit tests by running `make tests`, and you can run
-them by running `make runtests`.  The installation process will not
+You can build the unit tests by running `make test`, and you can run
+them by running `make runtest`.  The installation process will not
 install unit tests into the install prefix with all the other build
 targets; unit tests are in their "own little world."
 
@@ -140,41 +140,36 @@ another `uninstall` rule every time you start a new project.  In order
 to adapt this template for your own project, you will probably want to
 do the following:
 
-* Replace this `README.md` file with one that is appropriate for your
-    project.  You should probably also replace (or delete) the
-    `COPYING` file, and maybe the `INSTALL` file, if you've seen fit
-    to modify the build/install process.
+* Replace this `README.md` file with one that is appropriate for you.
 
-* Add in your own modules.  (You can replace the `foo` module and/or
-    the `tinyxml2` module, and use them as templates.  It's unlikely
-    the "Hello, world!"  functionality provided by the foo module will
-    be super-useful for your project, anyway.)
+* Add in your own modules. (You can replace the `foo` module and/or
+    the `tinyxml2` module, and use them as templates.)
 
 * Edit `Makefile.in`:
 
-    - Change `pkg_name := one_true_makefile` to refer to the name of
+    - Change `pkg_name := non_recursive_make` to refer to the name of
         your project.
 
     - Change the `modules :=` area to reflect the names of your
         modules.  For example, if you killed the `foo` module, kept
         the `tinyxml2` module, and added two more modules called bar
-        and baz, you would change this section to:
+        and har, you would change this section to:
 
         <pre><code>modules := \
-            tinyxml2	bar	baz</code></pre>
+            tinyxml2	bar	har</code></pre>
 
     - Change the `testmodules :=` area to reflect the names of your
         unit test modules.  For example, if you used the `testfoo`
         module as a template to make a `testbar` module, you would
         change this section to:
 
-        <pre><code>modules := \
+        <pre><code>testmodules := \
             testbar</code></pre>
 
 * Edit your `module.mk` files to list all of the files you want to be
     listed as dependencies, and all the files you want to be affected
     by the `make install` target.  Everything uses the bottom source
-    directory as the base directory, and the One True Makefile is set
+    directory as the base directory, and the Non Recursive Make is set
     up to mirror the organization of the staging directory.  Things in
     `etc` or `share` will just get copied around by Make, since they
     don't need to be compiled.
