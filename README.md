@@ -58,7 +58,7 @@ Features
     that suffix to something that calls to mind the name of your
     project.)
 
-Scheme for `#include` directives
+Scheme for `#include` Directives
 ================================
 
 Please note that, if your project provides e.g. a
