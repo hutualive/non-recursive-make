@@ -1,31 +1,11 @@
-The One True Makefile
+Non Recursive Make
 =====================
 
-The purpose of this One True Makefile project is to provide a template
-for projects that use Autoconf, Libtool and Make, but not Automake.
-(I prefer not to use Automake, although obviously I like some of its
-brothers.)  It is placed in the public domain, since I don't see the
-point of making a copyleft build process template.
-
-If you're going to use this template project, you will probably want
-to already have a working knowledge of how Autoconf, Libtool and Make
-work, although if you're still learning, you might like to use the One
-True Makefile as a working example.  (This README won't be much of a
-tutorial, though.)  In order to understand the logic of e.g. what goes
-in `share` directories and what goes in `etc` directories, you should
-probably also have a basic familiarity with the Linux Filesystem
-Hierarchy Standard.
-
-Rules are set up with C++ in mind, although it should be easy to add
-rules for other languages.
+a template for project that use Autoconf, Libtool and Make, but not Automake, in non-recursive make style.
+philosophy from Peter Miller's "Recursive Make Considered Harmful" paper.
 
 Features
 ========
-
-The One True Makefile's build philosophy is based on the one from
-Peter Miller's "Recursive Make Considered Harmful" paper, although it
-also has some other nice features.  Specifically, the One True
-Makefile provides:
 
 1. Modularity.
 
@@ -40,10 +20,9 @@ Makefile provides:
     libz.so, so you still have to manually specify library
     dependencies and link targets in the module.mk files.
 
-4. Avoidence of recursive Make.  (See Miller's paper; it's easy to
-    find with google.)
+4. Avoidence of recursive make.
 
-5. Parallel building using Make's `-j` flag.  This is robust and works
+5. Parallel building using Make's `-j` flag. This is robust and works
     well with incremental builds thanks to point 4).
 
 6. Unit tests, build artifacts, and final output all go in their own
@@ -52,8 +31,7 @@ Makefile provides:
     and shared libraries will Just Work, even if you haven't run make
     install.
 
-7. A `make uninstall` target.  (I wish more autotools-based projects
-    provided that.)
+7. A `make uninstall` target.
 
 8. A unit testing framework that leverages Python's unittest library.
     (Yes, unittest is designed for Python projects, but it's pretty
@@ -65,29 +43,20 @@ Makefile provides:
     `unittest` framework provides hooks for that.)
 
 9. Flexibility, in that I've tried to write everything in such a way
-    that, if you don't like what the One True Makefile is doing
-    (blasphemer!), it should be obvious how it works and how you can
+    that, if you don't like what the Makefile is doing, it should be obvious how it works and how you can
     change it.
 
 10. I've included a copy of Lee Thomason's excellent TinyXML2 library,
     since I like using xml for config files.  If you don't like and/or
     need it, removing it is as easy as removing `tinyxml2` from the
     modules section of `Makefile.in`, and running `rm -rf tinyxml2`.
-    (This is an example of the modularity of which I spoke, up in
-    point 1).)  Note that the actual library will be called
+    Note that the actual library will be called
     `libtinyxml2-otm.so`, with a `-otm` at the end, in order to avoid
     conflicts with any other `libtinyxml2.so` shared library files
-    that may be installed.  (Again, if you don't like the `-otm`
+    that may be installed. (Again, if you don't like the `-otm`
     suffix, it's easy to change; in fact, you should probably change
     that suffix to something that calls to mind the name of your
     project.)
-
-Note that I have tried to provide the above benefits using minimalist
-approaches; for example, I use implicit rules whenever possible.  This
-makes the build machinery more readable, easier to understand and
-easier to maintain.  If you feel overwhelmed reading the Makefile.in,
-I highly recommend reading the Recursive Make Considered Harmful paper
-by Miller.  It's easy to find via Google.
 
 Scheme for `#include` directives
 ================================
@@ -115,20 +84,9 @@ directive for a file installed somewhere like
 
 This means that their users have to pass the compiler a
 `-I/usr/local/include/MyProject/Foo` flag, since the compiler doesn't
-know about the MyProject/Foo subdirectory by default.  In fact, the
+know about the MyProject/Foo subdirectory by default. In fact, the
 user has to include another compiler flag for every dependency that
 does this.
-
-But you don't do that, because you're better than that.
-
-(Please note that my rant is somewhat spoiled by the fact that the
-included copy of TinyXML2 (by Lee Thomason) does not use this
-project's namespace (i.e. something like
-`OneTrueMakefile::TinyXML2::TiXmlDocument`), since I didn't write the
-(excellent) TinyXML2 library, and instead I just dropped it into this
-One True Makefile project.  I didn't change how namespaces work in
-TinyXML2 because I didn't want to muck around in the code too much,
-for fear of introducing a subtle bug somewhere.)
 
 Usage
 =====
