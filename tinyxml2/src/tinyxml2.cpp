@@ -23,7 +23,7 @@ distribution.
 
 // I modified this from the original.  -NB
 // #include "tinyxml2.h"
-#include "one_true_makefile/tinyxml2/tinyxml2.h"
+#include "non_recursive_make/tinyxml2/tinyxml2.h"
 
 #include <new>		// yes, this one new style header, is in the Android SDK.
 #   ifdef ANDROID_NDK
