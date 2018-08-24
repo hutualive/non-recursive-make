@@ -1,4 +1,4 @@
-# recursive-make
+# non-recursive-make
 c project template based on autoconf and automake with non-recursive make approach
 
 # quick start guide
