@@ -5,8 +5,9 @@ AC_INIT([hello], [0.0.1], [bug@xxx.com], [hello], [xxx.com])
 AC_PREREQ([2.69])
 
 # Put autotools auxiliary files in a subdir, so they don't clutter top dir.
-AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_MACRO_DIR([m4])
+# un-comment it when you really need it.
+#AC_CONFIG_AUX_DIR([build-aux])
+#AC_CONFIG_MACRO_DIR([m4])
 
 # Enable "automake" to simplify creating makefiles. foreign relaxes some GNU
 # checks. -Wall and -Werror are instructions to Automake, not GCC.
