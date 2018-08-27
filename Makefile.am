@@ -10,9 +10,6 @@
 # put 3rd party macros in m4 directory
 ACLOCAL_AMFLAGS = -I m4
 
-# slimmer build output
-# AM_SILENT_RULES([yes])
-
 bin_PROGRAMS = hello
 hello_SOURCES = src/hello.h src/hello.c src/main.c
 
