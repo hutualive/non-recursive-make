@@ -16,6 +16,9 @@ AC_CONFIG_MACRO_DIR([m4])
 # checks. -Wall and -Werror are instructions to Automake, not GCC.
 AM_INIT_AUTOMAKE([subdir-objects foreign -Wall -Werror])
 
+# slimmer build output
+# AM_SILENT_RULES([yes])
+
 # These are the files to be generated.
 AC_CONFIG_FILES([Makefile])
 
